@@ -3,6 +3,7 @@ import {config} from "dotenv"
 import {connectToDB} from "./config/db.connect.js";
 import {userRoutes} from "./routes/users.routes.js";
 import cors from "cors"
+import cookieParser from "cookie-parser"
 
 config();
 
@@ -10,6 +11,7 @@ const app = express();
 
 app.use(json())
 app.use(cors())
+app.use(cookieParser())
 
 connectToDB();
 
